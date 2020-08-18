@@ -10,6 +10,7 @@ const App = () => {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -30,12 +31,12 @@ const App = () => {
 
   return (
     <div>
-      <SavedList list={[ /* This is stretch */]} />
+      <SavedList list={saved}/>
       <Route exact path='/'>
         <MovieList movies={movieList}/>
       </Route>
       <Route path='/:id'>
-        <Movie />
+        <Movie saved={saved} setSaved={setSaved}/>
       </Route>
     </div>
   );

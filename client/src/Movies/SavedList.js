@@ -6,6 +6,7 @@ const SavedList = props => {
   const home = () => {
     history.push('/')
   }
+  
   return (
 
     <div className="saved-list">
